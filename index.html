@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <title>Weather Dashboard </title>
+</head>
+
+<body class="weather flex-column min-100-vh">
+    <header class="hero">
+      <h1 class="app-title"><i class="fab fa-github"></i> Weather Dashboard</h1>
+    </header>
+  
+  
+    <main class="containter">
+      <div class="row">
+        <div class="col-4">
+          <h3 class="search-city">Search for a City</h3>
+          <form id="user-form" class="input-group mb-3">
+            <input id="city-input" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name"/>
+              <div class="input-group-append"></div>
+                <button><svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z" fill="currentColor" type="submit"></path></svg></button>
+              </div>
+            <button class="btn">Austin</button>
+            <button class="btn">Chicago</button>
+            <button class="btn">New York</button>
+            <button class="btn">Orlando</button>
+            <button class="btn">San Francisco</button>
+            <button class="btn">Seattle</button>
+            <button class="btn">Denver</button>
+            <button class="btn">Atlanta</button>
+          </form>
+        </div>
+  
+      <div class="current-weather col-8">
+        <div class="row mr-0">
+          <div class="col-12 m-3">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="city">Atlanta </h2>
+                <img src="" alt="" class="icon" />
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                  <h2 class="temp">71.01 F</h2>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="description"></div>
+              </div>
+          </div>
+            <div class="row">
+                <div class="col-12">
+                  <div class="wind">Winds 6.67 MPH</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                  <div class="humidity"> 45% </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                  <div class="UV">UV Index</div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h2 class="future-conditons"> 5 Day Forcast:</h2>
+            <div id="future-container" class="card-forcast">
+                <h3 class="date"><h3>
+                <div class="temp"><div>
+                <div class="wind"><div>
+                <div class="humidity"></div>
+            <div>
+      </div>
+    </main>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
