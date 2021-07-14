@@ -17,7 +17,7 @@ var formSumbitHandler = function(event){
 }
 var cityArray = [];
 var saveSearch = function(){
-    localStorage.setItem(JSON.stringify(cityArray));
+    localStorage.setItem("search", JSON.stringify(cityArray));
 };
 
 var fetchWeather = function(city){
@@ -32,7 +32,6 @@ var fetchWeather = function(city){
 };
 
 var displayWeather = function(data, name){
-
    var temperatureData = document.querySelector(".temp");
    temperatureData.textContent = "Temperature: " + data.main.temp + " °C";
 
@@ -64,10 +63,10 @@ var displayUvIndex = function(data){
     const value = data.coord;
 
     var uvData =  document.querySelector("UV");
-    uvData.textContent = "UV Index: " + value ;
+    uvData = "UV Index: " + value ;
 
     uvIndexValue = document.createElement("span");
-    uvIndexValue.textContent = data.coord;
+    uvIndexValue.textContent = data.value;
 
     if(data.value <= 2) {
         uvIndexValue.classList = "green"
@@ -96,6 +95,7 @@ var displayFiveDay = function(data) {
     fiveDay.textContent = "5-Day Forecast:";
 
     var forecast = data.list;
+    console.log(forcast)
         for(var i = 5; i < forecast.length; i = i + 8) {
        var fiveDayForcast = forecast[i];
 
@@ -107,13 +107,13 @@ var displayFiveDay = function(data) {
     //    $(`#date`).html(`<h2>${city} (${forecastDate})`);
 
        var fiveDayTemp = document.querySelector(".fortemp");
-       fiveDayTemp.textContent = fiveDayForcast.main.temp + " °C";
+       fiveDayTemp.textContent = fiveDayForcast.temp + " °C";
        
        var fiveDayHumidity = document.querySelector(".forhumidity");
-       fiveDayHumidity.textContent = fiveDayForcast.main.humidity + "  %";
+       fiveDayHumidity.textContent = fiveDayForcast.humidity + "  %";
 
        var fiveDayWind = document.querySelector(".forwind");
-       fiveDayWind.textContent = fiveDayForcast.main.wind.speed + " km/h";
+       fiveDayWind.textContent = fiveDayForcast.wind.speed + " km/h";
     }
 }
 cityForm.addEventListener("submit", formSumbitHandler);
