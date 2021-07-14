@@ -1,6 +1,5 @@
 var cityForm = document.querySelector("#city-form");
 var cityInput = document.querySelector("#city-input"); 
-// var displayCity = document.querySelector("#city");
 var fiveDay = document.querySelector("#fiveday-header");
 var fiveDayConditions = document.querySelector("#fiveday-conditions");
 
@@ -17,7 +16,9 @@ var formSumbitHandler = function(event){
     }
 }
 var cityArray = [];
-
+var saveSearch = function(){
+    localStorage.setItem(JSON.stringify(cityArray));
+};
 
 var fetchWeather = function(city){
     var apiKey = `b3c31541a930e81218d1e916ac9ed49a`;
@@ -31,10 +32,6 @@ var fetchWeather = function(city){
 };
 
 var displayWeather = function(data, name){
-
-// weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
-// displayCity.appendChild(weatherIcon);
-
 
    var temperatureData = document.querySelector(".temp");
    temperatureData.textContent = "Temperature: " + data.main.temp + " °C";
@@ -98,24 +95,25 @@ var displayFiveDay = function(data) {
     fiveDayConditions.textContent = ""
     fiveDay.textContent = "5-Day Forecast:";
 
-    // var forecast = data.list;
-        for(i = 0; i <= 5; i++) {
-    //    var fiveDayForcast = forecast[i];
+    var forecast = data.list;
+        for(var i = 5; i < forecast.length; i = i + 8) {
+       var fiveDayForcast = forecast[i];
 
     //    var forecastDate = document.querySelector(".date");
     //    forecastDate.textContent = moment.unix(fiveDayForcast.dt).format("MMM D, YYYY");
+    //    forecastEl.appendChild(forecastDate);
 
     //    var forecastDate = moment.unix(data.current.dt).format("MM/DD/YYYY");
     //    $(`#date`).html(`<h2>${city} (${forecastDate})`);
 
        var fiveDayTemp = document.querySelector(".fortemp");
-       fiveDayTemp.textContent = data.daily[i].temp.day; + " °C";
+       fiveDayTemp.textContent = fiveDayForcast.main.temp + " °C";
        
        var fiveDayHumidity = document.querySelector(".forhumidity");
-       fiveDayHumidity.textContent = data.daily[i].humidity + "  %";
+       fiveDayHumidity.textContent = fiveDayForcast.main.humidity + "  %";
 
        var fiveDayWind = document.querySelector(".forwind");
-       fiveDayWind.textContent = data.daily[i].wind_speed + " km/h";
+       fiveDayWind.textContent = fiveDayForcast.main.wind.speed + " km/h";
     }
 }
 cityForm.addEventListener("submit", formSumbitHandler);
