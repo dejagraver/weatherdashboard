@@ -1,0 +1,28 @@
+.search-city {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.app-title {
+    display: flex;
+    justify-content: center;
+}
+
+#fiveday-header {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.green {
+color: green;
+}
+
+.yellow {
+color: yellow;
+}
+
+.red {
+    color: red;
+}
