@@ -62,8 +62,8 @@ var getUvIndex = function(lat,lon){
 var displayUvIndex = function(data){
     const value = data.coord;
 
-    var uvData =  document.querySelector("UV");
-    uvData = "UV Index: " + value ;
+    var uvData =  document.querySelector(".UV");
+    uvData.textContent = "UV Index: " + data.value;
 
     uvIndexValue = document.createElement("span");
     uvIndexValue.textContent = data.value;
@@ -91,11 +91,10 @@ var fetchFiveDay = function(city){
 };
 
 var displayFiveDay = function(data) {
-    fiveDayConditions.textContent = ""
-    fiveDay.textContent = "5-Day Forecast:";
+    // fiveDayConditions.innerHTML = "";
+    // fiveDay.textContent = "5-Day Forecast:";
 
     var forecast = data.list;
-    console.log(forcast)
         for(var i = 5; i < forecast.length; i = i + 8) {
        var fiveDayForcast = forecast[i];
 
@@ -106,13 +105,13 @@ var displayFiveDay = function(data) {
     //    var forecastDate = moment.unix(data.current.dt).format("MM/DD/YYYY");
     //    $(`#date`).html(`<h2>${city} (${forecastDate})`);
 
-       var fiveDayTemp = document.querySelector(".fortemp");
+       var fiveDayTemp = document.querySelector(".fortemp").textContent = "";
        fiveDayTemp.textContent = fiveDayForcast.temp + " °C";
        
-       var fiveDayHumidity = document.querySelector(".forhumidity");
+       var fiveDayHumidity = document.querySelector(".forhumidity").textContent = "";
        fiveDayHumidity.textContent = fiveDayForcast.humidity + "  %";
 
-       var fiveDayWind = document.querySelector(".forwind");
+       var fiveDayWind = document.querySelector(".forwind").textContent = "";
        fiveDayWind.textContent = fiveDayForcast.wind.speed + " km/h";
     }
 }
