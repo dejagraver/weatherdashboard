@@ -100,18 +100,14 @@ var displayFiveDay = function(data) {
 
     //    var forecastDate = document.querySelector(".date");
     //    forecastDate.textContent = moment.unix(fiveDayForcast.dt).format("MMM D, YYYY");
-    //    forecastEl.appendChild(forecastDate);
 
-    //    var forecastDate = moment.unix(data.current.dt).format("MM/DD/YYYY");
-    //    $(`#date`).html(`<h2>${city} (${forecastDate})`);
-
-       var fiveDayTemp = document.querySelector(".fortemp").textContent = "";
-       fiveDayTemp.textContent = fiveDayForcast.temp + " °C";
+       var fiveDayTemp = document.querySelector(".fortemp");
+       fiveDayTemp.textContent = fiveDayForcast.main.temp + " °C";
        
-       var fiveDayHumidity = document.querySelector(".forhumidity").textContent = "";
-       fiveDayHumidity.textContent = fiveDayForcast.humidity + "  %";
+       var fiveDayHumidity = document.querySelector(".forhumidity");
+       fiveDayHumidity.textContent = fiveDayForcast.main.humidity + "  %";
 
-       var fiveDayWind = document.querySelector(".forwind").textContent = "";
+       var fiveDayWind = document.querySelector(".forwind");
        fiveDayWind.textContent = fiveDayForcast.wind.speed + " km/h";
     }
 }
