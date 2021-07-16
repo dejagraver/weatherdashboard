@@ -12,6 +12,9 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/78667882/125889783-20507d0e-6214-4269-bad1-7469d40c65af.png">
+
+
 Technologies Used
 - CSS
 - Javascript 
