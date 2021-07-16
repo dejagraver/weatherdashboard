@@ -21,7 +21,7 @@ var searchHistory = function(){
 };
 
 var displayHistory = function(){
-    var history = JSON.parse(window.localStorage.getItem("city"))
+    var city = JSON.parse(window.localStorage.getItem("city"))
     onclick("input").then(city);
 }
 
