@@ -26,3 +26,26 @@ color: yellow;
 .red {
     color: red;
 }
+
+#fiveday-container div {
+    display: flex;
+    justify-content:space-around;
+    background-color: aliceblue;
+}
+
+#fiveday-container span {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+div.col-12.col-md-4 {
+    max-width: 100%;
+}
+
+h1.app-title {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: aliceblue
+    
+}
