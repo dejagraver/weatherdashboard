@@ -12,11 +12,18 @@ var formSumbitHandler = function(event){
     } else{
         return "Enter a City";
     }
+    searchHistory()
 }
 var cityArray = [];
-var saveSearch = function(){
-    localStorage.setItem("search", JSON.stringify(cityArray));
+
+var searchHistory = function(){
+    localStorage.setItem("city", JSON.stringify(city));
 };
+
+var displayHistory = function(){
+    var history = JSON.parse(window.localStorage.getItem("city"))
+    onclick("input").then(city);
+}
 
 var fetchWeather = function(city){
     var apiKey = `b3c31541a930e81218d1e916ac9ed49a`;
@@ -68,7 +75,7 @@ var displayUvIndex = function(data){
 
     if(data.value <= 2) {
         uvIndexValue.classList = "green"
-    } else if(data.value > 2 && data.value<=8){
+    } else if(data.value > 2 && data.value <= 8){
         uvIndexValue.classList = "yellow "
     }
     else if(data.value > 8) {
